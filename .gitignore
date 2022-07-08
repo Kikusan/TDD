@@ -1,0 +1,19 @@
+node_modules/
+dist/
+webpack-stats/
+test-results/
+*.log
+.npmrc
+
+www/
+temp-deploy/
+loader/
+
+.staging/
+.config/
+
+.vscode/
+
+# reports
+coverage
+reports
