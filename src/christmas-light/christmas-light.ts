@@ -8,6 +8,13 @@ export default class ChristmasLight {
     }
   }
   light(xAxe, yAxe) {
-    this.grid[xAxe][yAxe] = true
+    this.grid[xAxe][yAxe] = true;
+  }
+  lightBloc(xAxe1, yAxe1, xAxe2, yAxe2) {
+    for (let i = xAxe1; i <= xAxe2; i++) {
+      for (let j = yAxe1; j <= yAxe2; j++) {
+        this.light(i, j);
+      }
+    }
   }
 }
