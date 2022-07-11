@@ -7,7 +7,7 @@ export default class ChristmasLight {
       this.grid[i] = new Array(size);
     }
   }
-  test() {
-    console.log("ok");
+  light(xAxe, yAxe) {
+    this.grid[xAxe][yAxe] = true
   }
 }
