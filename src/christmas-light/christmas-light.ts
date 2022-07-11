@@ -7,13 +7,27 @@ export default class ChristmasLight {
       this.grid[i] = new Array(size);
     }
   }
-  light(xAxe, yAxe) {
+
+  switchOn(xAxe, yAxe) {
     this.grid[xAxe][yAxe] = true;
   }
-  lightBloc(xAxe1, yAxe1, xAxe2, yAxe2) {
+
+  switchOnBloc(xAxe1, yAxe1, xAxe2, yAxe2) {
     for (let i = xAxe1; i <= xAxe2; i++) {
       for (let j = yAxe1; j <= yAxe2; j++) {
-        this.light(i, j);
+        this.switchOn(i, j);
+      }
+    }
+  }
+
+  switchOff(xAxe, yAxe) {
+    this.grid[xAxe][yAxe] = false;
+  }
+
+  switchOffBloc(xAxe1, yAxe1, xAxe2, yAxe2) {
+    for (let i = xAxe1; i <= xAxe2; i++) {
+      for (let j = yAxe1; j <= yAxe2; j++) {
+        this.switchOff(i, j);
       }
     }
   }
