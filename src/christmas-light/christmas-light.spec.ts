@@ -63,7 +63,50 @@ describe("ChristmasLight", () => {
     it("should be defined", () => {
       expect(christmasLight.switchOffBloc).toBeDefined();
     });
-    it("should switch on the given light", () => {
+    it("should switch on the given bloc of lights", () => {
+      for (let i = 10; i <= 20; i++) {
+        for (let j = 10; j <= 20; j++) {
+          expect(christmasLight.grid[i][j]).toBe(false);
+        }
+      }
+    });
+  });
+
+  describe("toggle", () => {
+    const christmasLight = new ChristmasLight(1000);
+
+    it("should be defined", () => {
+      expect(christmasLight.toggle).toBeDefined();
+    });
+    it("should switch on the light if it's off", () => {
+      christmasLight.toggle(10, 10);
+      expect(christmasLight.grid[10][10]).toBe(true);
+    });
+
+    it("should switch off the light if it's on", () => {
+      christmasLight.toggle(10, 10);
+      expect(christmasLight.grid[10][10]).toBe(false);
+    });
+  });
+
+  describe("toggleBloc", () => {
+    const christmasLight = new ChristmasLight(1000);
+
+    it("should be defined", () => {
+      expect(christmasLight.toggleBloc).toBeDefined();
+    });
+
+    it("should switch on the given bloc of lights", () => {
+      christmasLight.toggleBloc(10, 10, 20, 20);
+      for (let i = 10; i <= 20; i++) {
+        for (let j = 10; j <= 20; j++) {
+          expect(christmasLight.grid[i][j]).toBe(true);
+        }
+      }
+    });
+
+    it("should switch off the given bloc of lights", () => {
+      christmasLight.toggleBloc(10, 10, 20, 20);
       for (let i = 10; i <= 20; i++) {
         for (let j = 10; j <= 20; j++) {
           expect(christmasLight.grid[i][j]).toBe(false);
